@@ -69,13 +69,23 @@ Ensure both servers are running concurrently to have the complete application up
 
 ## Reproducible Environment
 
-We use the Nix package manager to create a reproducible development environment. The environment is defined in the `flake.nix` file, ensuring that all dependencies and tools are consistent across different setups. To use this, install Nix and run:
+To create a reproducible development environment, we utilize the Nix package manager. Nix ensures consistent dependencies and tools across different setups. Follow these steps to install Nix and enable flakes, as they are not supported out-of-the-box:
 
-```bash
-nix develop
-```
+1. **Install Nix:**
+   Follow the official Nix installation guide at [nixos.org](https://nixos.org/manual/nix/stable/#chap-installation). This will provide detailed instructions based on your operating system.
 
-This command will set up the environment as specified in `flake.nix`.
+2. **Enable Flakes:**
+   After installing Nix, you need to enable flakes by adding the following configuration to your Nix configuration file (usually located at `~/.config/nix/nix.conf` on Unix systems or `%LOCALAPPDATA%\nix\profiles\default\nix.conf` on Windows):
 
-Happy coding!
+   ```conf
+   experimental-features = nix-command flakes
+   ```
 
+3. **Develop with Nix:**
+   With flakes enabled, navigate to your project directory and run:
+
+   ```bash
+   nix develop
+   ```
+
+This command will set up the development environment as specified in the `flake.nix` file, ensuring all dependencies and tools are consistent.
