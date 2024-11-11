@@ -16,15 +16,17 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; };
-        dev = pkgs.writeShellScriptBin "dev" ''
+        backend = pkgs.writeShellScriptBin "backend" ''
           #!${pkgs.bash}/bin/bash
+          cd $PROJECT_DIR/backend/
           pnpm install
           pnpm run develop
         '';
-        run = pkgs.writeShellScriptBin "run" ''
+        frontend = pkgs.writeShellScriptBin "frontend" ''
           #!${pkgs.bash}/bin/bash
+          cd $PROJECT_DIR/frontend/
           pnpm install
-          pnpm run start
+          pnpm run develop
         '';
       in
       {
@@ -32,9 +34,12 @@
           buildInputs = [
             pkgs.nodejs
             pkgs.pnpm
-            dev
-            run
+            backend
+            frontend
           ];
+          shellHook = ''
+            export PROJECT_DIR="$(pwd)"
+          '';
         };
 
       }
