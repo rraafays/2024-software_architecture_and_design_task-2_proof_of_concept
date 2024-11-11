@@ -72,7 +72,7 @@ Ensure both servers are running concurrently to have the complete application up
 To create a reproducible development environment, we utilize the Nix package manager. Nix ensures consistent dependencies and tools across different setups. Follow these steps to install Nix and enable flakes, as they are not supported out-of-the-box:
 
 1. **Install Nix:**
-   Follow the official Nix installation guide at [nixos.org](https://nixos.org/manual/nix/stable/#chap-installation). This will provide detailed instructions based on your operating system.
+   Follow the official Nix installation guide at [nixos.org](https://nixos.org/download/). This will provide detailed instructions based on your operating system.
 
 2. **Enable Flakes:**
    After installing Nix, you need to enable flakes by adding the following configuration to your Nix configuration file (usually located at `~/.config/nix/nix.conf` on Unix systems or `%LOCALAPPDATA%\nix\profiles\default\nix.conf` on Windows):
