@@ -17,6 +17,11 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
+        init = pkgs.writeShellScriptBin "init" ''
+          #!${pkgs.bash}/bin/bash
+          cd $PROJECT_DIR/backend/ && pnpm install
+        '';
+
         frontend = pkgs.writeShellScriptBin "frontend" ''
           #!${pkgs.bash}/bin/bash
           cd $PROJECT_DIR/frontend/
@@ -56,6 +61,7 @@
             pkgs.nodejs
             pkgs.pnpm
             pkgs.dialog
+            init
             frontend
             backend
             backup
