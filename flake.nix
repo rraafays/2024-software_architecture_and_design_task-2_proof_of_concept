@@ -20,38 +20,34 @@
         frontend = pkgs.writeShellScriptBin "frontend" ''
           #!${pkgs.bash}/bin/bash
           cd $PROJECT_DIR/frontend/
-          pnpm install
           pnpm run develop
         '';
 
         backend = pkgs.writeShellScriptBin "backend" ''
           #!${pkgs.bash}/bin/bash
           cd $PROJECT_DIR/backend/
-          pnpm install
           pnpm strapi develop
         '';
 
-        export-database = pkgs.writeShellScriptBin "export-database" ''
+        backup = pkgs.writeShellScriptBin "backup" ''
           #!${pkgs.bash}/bin/bash
           cd $PROJECT_DIR/backend/
-          pnpm install
           pnpm strapi export
           cd $PROJECT_DIR
-          mkdir -p database_backups
-          mv backend/export_*.tar.gz.enc database_backups/
+          mkdir -p backups
+          mv backend/export_*.tar.gz.enc backups/
         '';
 
-        import-database = pkgs.writeShellScriptBin "import-database" ''
+        restore = pkgs.writeShellScriptBin "restore" ''
           #!${pkgs.bash}/bin/bash
           cd $PROJECT_DIR/backend/
-          echo $PROJECT_DIR/database_backups/
-          ls $PROJECT_DIR/database_backups/
+          echo $PROJECT_DIR/backups/
+          ls -l $PROJECT_DIR/backups/
           if [ -z "$1" ]; then
           echo "No backup file provided."
           exit 1
           fi
-          pnpm install
-          pnpm strapi import --file "$1"
+          pnpm strapi import --file $PROJECT_DIR/"$1"
         '';
       in
       {
@@ -62,8 +58,8 @@
             pkgs.dialog
             frontend
             backend
-            export-database
-            import-database
+            backup
+            restore
           ];
           shellHook = ''
             export PROJECT_DIR="$(pwd)"
