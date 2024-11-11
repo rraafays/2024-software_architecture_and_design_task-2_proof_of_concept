@@ -16,20 +16,27 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; };
+        dev = pkgs.writeShellScriptBin "dev" ''
+          #!${pkgs.bash}/bin/bash
+          pnpm install
+          pnpm run develop
+        '';
+        run = pkgs.writeShellScriptBin "run" ''
+          #!${pkgs.bash}/bin/bash
+          pnpm install
+          pnpm run start
+        '';
       in
       {
         devShell = pkgs.mkShell {
           buildInputs = [
             pkgs.nodejs
             pkgs.pnpm
+            dev
+            run
           ];
         };
 
-        packages.default = pkgs.writeShellScriptBin "start-strapi" ''
-          #!${pkgs.bash}/bin/bash
-          pnpm install
-          pnpm run develop
-        '';
       }
     );
 }
