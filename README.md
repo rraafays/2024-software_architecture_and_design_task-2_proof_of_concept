@@ -7,7 +7,7 @@ Welcome to Group 33's Proof of Concept Project repository for the Software Archi
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Running / Development](#running--development)
-- [Reproducible Environment](#reproducible-environment)
+- [Windows Guide with WSL](#windows-guide-with-wsl)
 
 ## Technologies
 
