@@ -132,4 +132,4 @@ frontend
    ```bash
    code .
    ```
-5. Install VSCode WSL after prompt appears in the bottom right
+5. When the prompt appears in the bottom right corner of VSCode, click 'Install' to proceed with installing the VSCode WSL extension.
