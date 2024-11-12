@@ -29,8 +29,8 @@ This project relies on the following technologies:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-repo-url/2024-software_architecture_and_design_task-2_proof_of_concept.git
-   cd 2024-software_architecture_and_design_task-2_proof_of_concept
+   git clone https://github.com/rraafays/2024-software_architecture_and_design_task-2_proof_of_concept proof_of_concept
+   cd proof_of_concept
    ```
 
 2. **Install backend dependencies:**
