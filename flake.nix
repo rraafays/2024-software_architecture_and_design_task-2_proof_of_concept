@@ -43,20 +43,28 @@
           cd $PROJECT_DIR/backend/
           pnpm strapi export
           cd $PROJECT_DIR
-          mkdir -p backups
-          mv backend/export_*.tar.gz.enc backups/
+          export TIMESTAMP=$(date +%Y%m%d%H%M%S)
+          mkdir -p backups/$TIMESTAMP
+          mv $(ls -1 backend/export_*.tar.gz.enc | sort -r | head -n 1) backups/$TIMESTAMP/strapi.tar.gz.enc
+          cp backend/database.db backups/$TIMESTAMP/database.db
         '';
 
         restore = pkgs.writeShellScriptBin "restore" ''
           #!${pkgs.bash}/bin/bash
           cd $PROJECT_DIR/backend/
-          echo $PROJECT_DIR/backups/
-          ls -l $PROJECT_DIR/backups/
           if [ -z "$1" ]; then
-          echo "No backup file provided."
+          echo -e "No backup directory provided"
+          lsd --tree $PROJECT_DIR/backups/
           exit 1
           fi
-          pnpm strapi import --file $PROJECT_DIR/"$1"
+          echo $PROJECT_DIR/"$1"
+          pnpm strapi import --file $PROJECT_DIR/"$1"/strapi.tar.gz.enc
+          cp $PROJECT_DIR/"$1"/database.db $PROJECT_DIR/backend/database.db
+        '';
+
+        backups = pkgs.writeShellScriptBin "backups" ''
+          #!${pkgs.bash}/bin/bash
+          lsd --tree $PROJECT_DIR/backups/
         '';
       in
       {
@@ -64,12 +72,13 @@
           buildInputs = [
             pkgs.nodejs
             pkgs.pnpm
-            pkgs.dialog
+            pkgs.lsd
             init
             frontend
             backend
             backup
             restore
+            backups
           ];
           shellHook = ''
             export PROJECT_DIR="$(pwd)"
@@ -86,11 +95,23 @@
             export DATABASE_USERNAME=
             export DATABASE_PASSWORD=
             export DATABASE_SSL=false
-            export DATABASE_FILENAME=.tmp/data.db
+            export DATABASE_FILENAME=database.db
             export JWT_SECRET=APHvSmKM5qD68FY8utznJQ==
 
             echo
             echo "2024, Sheffield Hallam University, Software Architecture & Design, Task 2: Proof of Concept. Development Shell. Configuration written by Raf Shahid: C0042249"
+            echo
+            echo "PROJECT_DIR=$PROJECT_DIR"
+            echo "HOST=$HOST"
+            echo "PORT=$PORT"
+            echo "APP_KEYS=$APP_KEYS"
+            echo "API_TOKEN_SALT=$API_TOKEN_SALT"
+            echo "ADMIN_JWT_SECRET=$ADMIN_JWT_SECRET"
+            echo "TRANSFER_TOKEN_SALT=$TRANSFER_TOKEN_SALT"
+            echo "DATABASE_CLIENT=$DATABASE_CLIENT"
+            echo "DATABASE_SSL=$DATABASE_SSL"
+            echo "DATABASE_FILENAME=$DATABASE_FILENAME"
+            echo "JWT_SECRET=$JWT_SECRET"
             echo
           '';
         };
