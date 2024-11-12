@@ -114,7 +114,7 @@ frontend
 1. Download and install Visual Studio Code from the [official website](https://code.visualstudio.com/).
 3. Run the following command
    ```bash
-   git clone URL
+   git clone https://github.com/rraafays/2024-software_architecture_and_design_task-2_proof_of_concept/
    ```
 
 ### Cloning the Project in WSL
