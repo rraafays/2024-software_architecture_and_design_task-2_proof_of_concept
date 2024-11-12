@@ -132,3 +132,4 @@ frontend
    ```bash
    code .
    ```
+5. Install VSCode WSL after prompt appears in the bottom right
