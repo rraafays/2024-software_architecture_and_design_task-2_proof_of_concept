@@ -19,13 +19,17 @@
 
         init = pkgs.writeShellScriptBin "init" ''
           #!${pkgs.bash}/bin/bash
+          echo $PROJECT_DIR/backend/
           cd $PROJECT_DIR/backend/ && pnpm install
+          echo
+          echo $PROJECT_DIR/frontend/
+          cd $PROJECT_DIR/frontend/ && pnpm install
         '';
 
         frontend = pkgs.writeShellScriptBin "frontend" ''
           #!${pkgs.bash}/bin/bash
           cd $PROJECT_DIR/frontend/
-          pnpm run develop
+          pnpm next dev --turbopack
         '';
 
         backend = pkgs.writeShellScriptBin "backend" ''
