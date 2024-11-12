@@ -69,6 +69,9 @@
           ];
           shellHook = ''
             export PROJECT_DIR="$(pwd)"
+            echo
+            echo "2024, Sheffield Hallam University, Software Architecture & Design, Task 2: Proof of Concept. Development Shell. Configuration written by Raf Shahid: C0042249"
+            echo
           '';
         };
 
