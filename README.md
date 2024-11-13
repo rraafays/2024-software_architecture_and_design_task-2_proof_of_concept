@@ -8,6 +8,7 @@ Welcome to Group 33's Proof of Concept Project repository for the Software Archi
 - [Setup](#setup)
 - [Running / Development](#running--development)
 - [Windows Guide with WSL](#windows-guide-with-wsl)
+- [Admin Account](#admin-account)
 
 ## Technologies
 
@@ -133,3 +134,10 @@ frontend
    code .
    ```
 5. When the prompt appears in the bottom right corner of VSCode, click 'Install' to proceed with installing the VSCode WSL extension.
+
+## Admin Account
+
+```bash
+email: admin@admin.admin
+password: Password1
+```
