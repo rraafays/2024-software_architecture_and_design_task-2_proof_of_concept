@@ -101,18 +101,6 @@
             echo
             echo "2024, Sheffield Hallam University, Software Architecture & Design, Task 2: Proof of Concept. Development Shell. Configuration written by Raf Shahid: C0042249"
             echo
-            echo "PROJECT_DIR=$PROJECT_DIR"
-            echo "HOST=$HOST"
-            echo "PORT=$PORT"
-            echo "APP_KEYS=$APP_KEYS"
-            echo "API_TOKEN_SALT=$API_TOKEN_SALT"
-            echo "ADMIN_JWT_SECRET=$ADMIN_JWT_SECRET"
-            echo "TRANSFER_TOKEN_SALT=$TRANSFER_TOKEN_SALT"
-            echo "DATABASE_CLIENT=$DATABASE_CLIENT"
-            echo "DATABASE_SSL=$DATABASE_SSL"
-            echo "DATABASE_FILENAME=$DATABASE_FILENAME"
-            echo "JWT_SECRET=$JWT_SECRET"
-            echo
           '';
         };
 
