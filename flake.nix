@@ -29,7 +29,7 @@
         frontend = pkgs.writeShellScriptBin "frontend" ''
           #!${pkgs.bash}/bin/bash
           cd $PROJECT_DIR/frontend/
-          pnpm next dev --turbopack
+          pnpm next dev --turbopack --port 8080
         '';
 
         backend = pkgs.writeShellScriptBin "backend" ''
