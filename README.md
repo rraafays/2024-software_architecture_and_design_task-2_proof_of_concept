@@ -14,11 +14,11 @@ Welcome to Group 33's Proof of Concept Project repository for the Software Archi
 
 This project relies on the following technologies:
 
-- **Nix**: A package manager and build system for reproducible builds and environments.
+- **Nix**: Package manager and build system for reproducible builds and environments.
 - **Node.js**: JavaScript runtime environment for running the server.
-- **TypeScript**: A strongly typed programming language that builds on JavaScript.
-- **Strapi**: A headless CMS for the backend.
-- **TailwindCSS**: A utility-first CSS framework for styling the frontend.
+- **TypeScript**: Strongly typed superset of JavaScript.
+- **Strapi**: Headless CMS for the backend.
+- **TailwindCSS**: Utility-first CSS framework for styling the frontend.
 
 ## Setup
 
