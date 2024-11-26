@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Menu from "./Menu";
 import Image from "next/image";
+import SearchBar from "./SearchBar";
+import NavigationIcons from "./NavigationIcons";
 
 const NavigationBar = () => {
   return (
@@ -19,7 +21,10 @@ const NavigationBar = () => {
             <div className="text-2xl tracking-wide">Advanced Media Library</div>
           </Link>
         </div>
-        <div className="w-2/3"></div>
+        <div className="w-2/3 flex items-center justify-between gap-8">
+          <SearchBar />
+          <NavigationIcons />
+        </div>
       </div>
     </div>
   );
