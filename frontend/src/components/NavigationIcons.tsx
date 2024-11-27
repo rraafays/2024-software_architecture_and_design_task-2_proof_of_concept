@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import CartModal from "./CartModal";
+import Basket from "./Basket";
 
 const NavigationIcons = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isBasketOpen, setIsBasketOpen] = useState(false);
 
   const router = useRouter();
 
@@ -51,13 +51,13 @@ const NavigationIcons = () => {
           alt="cart"
           width={22}
           height={22}
-          onClick={() => setIsCartOpen((prev) => !prev)}
+          onClick={() => setIsBasketOpen((prev) => !prev)}
         />
         <div className="absolute -top-4 -right-4 w-6 h-6 bg-pink rounded-full text-white text-sm flex items-center justify-center">
           22
         </div>
       </div>
-      {isCartOpen && <CartModal />}
+      {isBasketOpen && <Basket />}
     </div>
   );
 };
