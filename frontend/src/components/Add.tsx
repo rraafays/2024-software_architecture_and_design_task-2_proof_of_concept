@@ -5,11 +5,13 @@ import { useState } from "react";
 const Add = () => {
   const [quantity, setQuantity] = useState(1);
 
+  const stock = 4;
+
   const incrementQuantity = (increment: false | true) => {
     if (increment === false && quantity > 1) {
       setQuantity((prev) => prev - 1);
     }
-    if (increment === true && quantity < 99) {
+    if (increment === true && quantity < stock) {
       setQuantity((prev) => prev + 1);
     }
   };
