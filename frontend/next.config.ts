@@ -11,6 +11,18 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.pexels.com",
       },
+      {
+        protocol: "https",
+        hostname: "meet-the-myths.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.bandainamcostudios.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.arstechnica.net",
+      },
     ],
   },
 };
