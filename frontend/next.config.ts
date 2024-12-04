@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.arstechnica.net",
       },
+      {
+        protocol: "https",
+        hostname: "assets-prd.ignimgs.com",
+      },
     ],
   },
 };

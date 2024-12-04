@@ -16,7 +16,7 @@ const Basket = () => {
             <div className="flex gap-4">
               <Image
                 src={
-                  "https://images.unsplash.com/photo-1721332154161-847851ea188b?q=80&w=3435&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  "https://assets-prd.ignimgs.com/2022/01/07/gta-san-andreas-collage-button2-1641589094079.jpg"
                 }
                 alt=""
                 width={72}
@@ -26,7 +26,9 @@ const Basket = () => {
               <div className="flex flex-col justify-between w-full">
                 <div>
                   <div className="flex items-center justify-between gap-8">
-                    <h3 className="font-semibold">Product Name</h3>
+                    <h3 className="font-semibold">
+                      Grand Theft Auto: San Andreas
+                    </h3>
                     <div className="p-1 bg-gray-50 rounded-sm">20 GBP</div>
                   </div>
                   <div className="text-sm text-gray-500">available</div>
