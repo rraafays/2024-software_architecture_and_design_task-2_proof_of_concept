@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_items",
+  "info": {
+    "singularName": "media-item",
+    "pluralName": "media-items",
+    "displayName": "Media Item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
