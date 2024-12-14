@@ -73,6 +73,7 @@
             pkgs.nodejs
             pkgs.pnpm
             pkgs.lsd
+            pkgs.httpie
             init
             frontend
             backend

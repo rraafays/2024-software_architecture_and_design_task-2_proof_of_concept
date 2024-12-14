@@ -4,7 +4,8 @@
   "info": {
     "singularName": "media-item",
     "pluralName": "media-items",
-    "displayName": "Media Item"
+    "displayName": "Media Item",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,26 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "genre": {
+      "type": "string",
+      "required": true
+    },
+    "format": {
+      "type": "string",
+      "required": true
+    },
+    "availability": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "min": 0
     }
   }
 }
