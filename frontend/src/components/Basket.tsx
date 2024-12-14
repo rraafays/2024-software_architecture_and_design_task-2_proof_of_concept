@@ -29,31 +29,23 @@ const Basket = () => {
                     <h3 className="font-semibold">
                       Grand Theft Auto: San Andreas
                     </h3>
-                    <div className="p-1 bg-gray-50 rounded-sm">20 GBP</div>
+                    <div className="p-1 bg-gray-50 rounded-sm">Available</div>
                   </div>
-                  <div className="text-sm text-gray-500">available</div>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">qty 2</span>
-                  <span className="text-red-500">remove</span>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-500">qty 2</span>
+                    <span className="text-red-500">remove</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div>
-            <div className="flex items-center justify-between font-semibold">
-              <span>Subtotal</span>
-              <span>20 GBP</span>
-            </div>
-            <p className="text-gray-500 text-sm mt-2 mb-4">
-              fdgkljdfhgkljhdfskgljhd
-            </p>
             <div className="flex justify-between text-sm">
               <button className="rounded-md py-3 px-4 ring-1 ring-gray-300">
                 View Cart
               </button>
               <button className="rounded-md py-3 px-4 bg-black text-white">
-                Checkout
+                Borrow
               </button>
             </div>
           </div>

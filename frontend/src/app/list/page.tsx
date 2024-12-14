@@ -8,10 +8,10 @@ const ListPage = () => {
       <div className="hidden sm:flex bg-pink-200 px-4 justify-between h-64 rounded-lg">
         <div className="w-2/3 flex flex-col items-center justify-center gap-8">
           <h1 className="text-4xl font-semibold leading-[48px] text-gray-700">
-            Sale on Video Games
+            New Video Games Added
           </h1>
           <button className="rounded-3xl bg-aml text-white w-max py-3 px-5 text-sm">
-            Shop Now
+            Browse Now
           </button>
         </div>
         <div className="relative w-1/3">
@@ -24,7 +24,7 @@ const ListPage = () => {
         </div>
       </div>
       <Filter />
-      <h1 className="mt-12 text-xl font-semibold">New books</h1>
+      <h1 className="mt-12 text-xl font-semibold mb-12">Results</h1>
       <ItemList />
     </div>
   );
