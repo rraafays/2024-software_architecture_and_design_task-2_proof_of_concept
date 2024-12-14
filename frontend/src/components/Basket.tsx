@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 const Basket = () => {
-  const items = true;
+  const [items, setItems] = useState(true);
 
   return (
     <div className="absolute p-4 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-white top-12 right-0 flex flex-col gap-6 z-20 w-max">
@@ -44,7 +45,10 @@ const Basket = () => {
               <button className="rounded-md py-3 px-4 ring-1 ring-gray-300">
                 View Cart
               </button>
-              <button className="rounded-md py-3 px-4 bg-black text-white">
+              <button
+                className="rounded-md py-3 px-4 bg-black text-white"
+                onClick={() => setItems((prev) => !prev)}
+              >
                 Borrow
               </button>
             </div>
